@@ -1,7 +1,7 @@
 package com.ing.mortgages.entity;
 
-import java.io.PrintStream;
-import java.time.LocalDate;
+
+
 import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
@@ -25,7 +25,10 @@ public class Transaction {
 	private double outStandingBalance;
 	private Integer mortgageId;
 	@ManyToOne
+
 	@JoinColumn(name="account_id")
+
+	@JoinColumn(name="account_number")
 	private Account account;
 	
 	
@@ -72,5 +75,6 @@ public class Transaction {
 		this.account = account;
 	}
 	
-
 }
+
+

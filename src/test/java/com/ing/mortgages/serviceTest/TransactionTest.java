@@ -3,15 +3,15 @@ package com.ing.mortgages.serviceTest;
 
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.doNothing;
+
 import static org.mockito.Mockito.when;
 
-import java.io.PrintStream;
+
 import java.time.LocalDateTime;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mockito;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;

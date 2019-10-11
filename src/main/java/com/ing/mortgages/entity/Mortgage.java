@@ -1,8 +1,6 @@
 package com.ing.mortgages.entity;
 
 import java.time.LocalDateTime;
-
-import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,12 +9,14 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-@Entity
+
 @Table(name= "mortgage")
 public class Mortgage {
 	
 private static final long serialVersionUID = -5901129703546095407L;
 	
+
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer mortgageId;
@@ -24,6 +24,7 @@ private static final long serialVersionUID = -5901129703546095407L;
 	private String propertyAddress;
 	private Integer propertyValue;
 	private Integer loanAmount;
+
 	private Integer rateOfInterest;
 	private Integer tenure;
 	private Double emi;
@@ -35,8 +36,8 @@ private static final long serialVersionUID = -5901129703546095407L;
 	@JoinColumn(name="userId")
 	private User user;
 
-	
-	
+
+
 
 	public User getUser() {
 		return user;
@@ -46,6 +47,8 @@ private static final long serialVersionUID = -5901129703546095407L;
 	public void setUser(User user) {
 		this.user = user;
 	}
+
+
 
 
 	public Integer getMortgageId() {
@@ -60,11 +63,11 @@ private static final long serialVersionUID = -5901129703546095407L;
 
 
 
+
+
 	public String getPropertyName() {
 		return propertyName;
 	}
-
-
 
 
 	public void setPropertyName(String propertyName) {
@@ -73,12 +76,9 @@ private static final long serialVersionUID = -5901129703546095407L;
 
 
 
-
 	public String getPropertyAddress() {
 		return propertyAddress;
 	}
-
-
 
 
 	public void setPropertyAddress(String propertyAddress) {
@@ -86,20 +86,14 @@ private static final long serialVersionUID = -5901129703546095407L;
 	}
 
 
-
-
 	public Integer getPropertyValue() {
 		return propertyValue;
 	}
 
 
-
-
 	public void setPropertyValue(Integer propertyValue) {
 		this.propertyValue = propertyValue;
 	}
-
-
 
 
 	public Integer getLoanAmount() {
@@ -114,16 +108,19 @@ private static final long serialVersionUID = -5901129703546095407L;
 
 
 
+
+	
+
+
+
 	public Integer getRateOfInterest() {
 		return rateOfInterest;
 	}
 
-
-
-
 	public void setRateOfInterest(Integer rateOfInterest) {
 		this.rateOfInterest = rateOfInterest;
 	}
+
 
 
 
@@ -133,18 +130,14 @@ private static final long serialVersionUID = -5901129703546095407L;
 	}
 
 
-
-
 	public void setTenure(Integer tenure) {
 		this.tenure = tenure;
 	}
 
-
-
-
 	public Double getEmi() {
 		return emi;
 	}
+
 
 
 
@@ -155,27 +148,18 @@ private static final long serialVersionUID = -5901129703546095407L;
 
 
 
-
 	public Double getTotalAmount() {
 		return totalAmount;
 	}
-
-
-
 
 	public void setTotalAmount(Double totalAmount) {
 		this.totalAmount = totalAmount;
 	}
 
 
-
-
 	public Double getOutstandingBalance() {
 		return outstandingBalance;
 	}
-
-
-
 
 	public void setOutstandingBalance(Double outstandingBalance) {
 		this.outstandingBalance = outstandingBalance;
@@ -189,16 +173,10 @@ private static final long serialVersionUID = -5901129703546095407L;
 	}
 
 
-
-
 	public void setCreatedDate(LocalDateTime createdDate) {
 		this.createdDate = createdDate;
 	}
 
-
-
-
-
-
-
 }
+
+

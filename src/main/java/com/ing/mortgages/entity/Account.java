@@ -1,7 +1,6 @@
 package com.ing.mortgages.entity;
 
 import java.util.List;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -60,6 +59,7 @@ public class Account {
 	public void setTransactionList(List<Transaction> transactionList) {
 		this.transactionList = transactionList;
 	}
-	
 
 }
+
+
