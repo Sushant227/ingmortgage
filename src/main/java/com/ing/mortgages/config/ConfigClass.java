@@ -18,7 +18,7 @@ public class ConfigClass extends WebSecurityConfigurerAdapter {
 	}
 
 	protected void configure(HttpSecurity http) throws Exception {
-		http.httpBasic().and().authorizeRequests().antMatchers("/admn/**")
+		http.httpBasic().and().authorizeRequests().antMatchers("/admin/**")
 				.hasRole("ADMIN").and()
 				.csrf().disable().headers().frameOptions().disable();
 	}
