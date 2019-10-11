@@ -38,17 +38,13 @@ public class MortgageServiceImpl implements MortgageService {
 	@Override
 	public List<MortgageViewResponseDTO> viewMortgages() {
 		
-		LOGGER.info("viewMortgages");
+		LOGGER.info("viewMortgages:: {}");
 
-		Optional<List<Mortgage>> findAll = mortgagerepository.findAllMortgages();
+		List<Mortgage> findAll = mortgagerepository.findAll();
 		
-		if(!findAll.isPresent())
-				throw new MortgagesDoesntExistException("mortgage doesnt exist");
-		List<Mortgage> list1 = findAll.get();
-			
 		List<MortgageViewResponseDTO> newList = new ArrayList<>();
 		
-		list1.forEach(mortgagees->{
+		findAll.forEach(mortgagees->{
 			MortgageViewResponseDTO list = new MortgageViewResponseDTO();
 			list.setPropertyName(mortgagees.getPropertyName());
 			list.setPropertyValue(mortgagees.getPropertyValue());

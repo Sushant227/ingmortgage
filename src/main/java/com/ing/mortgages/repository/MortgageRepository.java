@@ -14,7 +14,4 @@ public interface MortgageRepository extends JpaRepository<Mortgage, Integer> {
 	@Query(value="select * from mortgage  where user_id=?", nativeQuery=true)
 	public Mortgage getUserId(Integer id);
 
-	@Query("select t from Transaction t")
-	public Optional<List<Mortgage>> findAllMortgages();
-
 }

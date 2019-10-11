@@ -62,10 +62,8 @@ public class MortgageServiceImplTest {
 		
 		List<Mortgage> mortgages = new ArrayList<>();
 		mortgages.add(mortgage);
-		
-		Optional<List<Mortgage>> optMoort = Optional.of(mortgages);
-		
-		Mockito.when(mortgagerepository.findAllMortgages()).thenReturn(optMoort);
+				
+		Mockito.when(mortgagerepository.findAll()).thenReturn(mortgages);
 		
 		List<MortgageViewResponseDTO> viewMortgages = mortgageServiceImpl.viewMortgages();
 		

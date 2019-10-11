@@ -1,5 +1,6 @@
 package com.ing.mortgages.service;
 
+
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -30,8 +31,8 @@ public class TransactionServiceImpl implements TransactionService{
 	
 	@Autowired
 	AccountRepository accountRepository;
-	
-	@Scheduled(cron="*/50 * * * * * ")
+
+	@Scheduled(cron="*/120 * * * * * ")
 	public void createTransaction() {
 		
 		List<Integer> users = userRepository.getDistinctUserId();

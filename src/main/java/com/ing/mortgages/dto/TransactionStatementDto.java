@@ -58,4 +58,5 @@ public class TransactionStatementDto {
 		this.outStandingBalance = outStandingBalance;
 	}
 
+
 }

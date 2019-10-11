@@ -31,11 +31,11 @@ public class TransactionStatementServiceImpl implements TransactionStatementServ
 	 * 
 	 * @param userId-NotNull
 	 * @return List<TransactionStatementDto>
-	 */
-
+    **/
+	
 	@Override
 	public List<TransactionStatementDto> accountTransactionStatements(Integer accountNumber) {
-		LOGGER.info("accountTransactionStatements()");
+		LOGGER.info("accountTransactionStatements:: {}=", accountNumber);
 		Optional<List<Transaction>> transactions = trsansactionRepository.findStatementsAccountNumber(accountNumber);
 		List<TransactionStatementDto> result = new ArrayList<>();
 		if (transactions.isPresent()) {

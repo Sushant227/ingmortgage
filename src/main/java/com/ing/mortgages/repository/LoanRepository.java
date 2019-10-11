@@ -16,7 +16,6 @@ public interface LoanRepository extends JpaRepository<Loan, Integer>{
 	@Query(value="select * from loan where loan_amount<=:eligibleAmount and loan_amount<=:income",nativeQuery=true)
 	public Optional<List<Loan>> getLoanByLoanAmount(@Param("eligibleAmount") Integer eligibleAmount,@Param("income") Integer income);
 
-	
 	public Optional<List<Loan>> findByLoanId(Integer loanId);
 	
 }

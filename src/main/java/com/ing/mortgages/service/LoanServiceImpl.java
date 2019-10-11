@@ -63,6 +63,7 @@ public class LoanServiceImpl implements LoanService {
 			throw new NotEligibleForTakingLoan("salary should be greater than 500000 for applying loan");
 		
 		Optional<List<Loan>> loansList = loanrepository.getLoanByLoanAmount(eligbleAmount,income);
+
 		
 		if(!loansList.isPresent())
 			throw new LoansListEmpty("loans are empty");
@@ -109,7 +110,8 @@ public class LoanServiceImpl implements LoanService {
 		 Integer loanAmt = loanDetail.get().get(0).getLoanAmount();
 		 Integer roi = loanDetail.get().get(0).getRateOfInterest();
 		 
-		 Double totalAmount =  (double) loanAmt + ((roi*loanAmt)/100.00);
+		
+		 Double totalAmount =  (double) loanAmt + ((roi*loanAmt)/100);
 		 
 		 Double outstandingBalance = totalAmount;
 		 
