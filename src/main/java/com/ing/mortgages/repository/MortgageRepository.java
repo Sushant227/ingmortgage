@@ -1,5 +1,8 @@
 package com.ing.mortgages.repository;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -10,5 +13,8 @@ public interface MortgageRepository extends JpaRepository<Mortgage, Integer> {
 	
 	@Query(value="select * from mortgage  where user_id=?", nativeQuery=true)
 	public Mortgage getUserId(Integer id);
+
+	@Query("select t from Transaction t")
+	public Optional<List<Mortgage>> findAllMortgages();
 
 }

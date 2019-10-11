@@ -10,6 +10,6 @@ import com.ing.mortgages.entity.Account;
 public interface AccountRepository extends JpaRepository<Account,Integer> {
 	
 	@Query(value="select * from account  where user_id=?",nativeQuery=true)
-	public Account findByUserId(Integer Id);
+	public Account findByUserId(Integer id);
 
 }

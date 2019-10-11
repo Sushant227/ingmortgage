@@ -7,7 +7,7 @@ public class TransactionStatementDto {
 	private Long accountNo;
 	private double amountDeducted;
 	private LocalDateTime tDate;
-	private Double outstandingBalance;
+	private Double outStandingBalance;
 	private Integer mortgageId;
 
 	public LocalDateTime gettDate() {
@@ -50,14 +50,12 @@ public class TransactionStatementDto {
 		this.amountDeducted = amountDeducted;
 	}
 
-	
-
-	public Double getOutstandingBalance() {
-		return outstandingBalance;
+	public Double getOutStandingBalance() {
+		return outStandingBalance;
 	}
 
-	public void setOutstandingBalance(Double outstandingBalance) {
-		this.outstandingBalance = outstandingBalance;
+	public void setOutStandingBalance(Double outStandingBalance) {
+		this.outStandingBalance = outStandingBalance;
 	}
 
 }

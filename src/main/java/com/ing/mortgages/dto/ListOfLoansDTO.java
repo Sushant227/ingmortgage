@@ -5,7 +5,7 @@ public class ListOfLoansDTO {
 	private Integer loanId;
 	private Integer loanAmount;
 	private Integer tenure;
-	private Double EMI;
+	private Double emi;
 	private Integer rateOfInterest;
 	
 	public Integer getLoanId() {
@@ -26,11 +26,12 @@ public class ListOfLoansDTO {
 	public void setTenure(Integer tenure) {
 		this.tenure = tenure;
 	}
-	public Double getEMI() {
-		return EMI;
+
+	public Double getEmi() {
+		return emi;
 	}
-	public void setEMI(Double eMI) {
-		EMI = eMI;
+	public void setEmi(Double emi) {
+		this.emi = emi;
 	}
 	public Integer getRateOfInterest() {
 		return rateOfInterest;

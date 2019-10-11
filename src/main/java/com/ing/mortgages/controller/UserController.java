@@ -39,10 +39,8 @@ public class UserController {
 	
 		String email= customerDto.getEmail();
 		String password= customerDto.getPassword();
-		LoginResponseDTO checkCustomer = userservice.checkCustomer(email,password);
+		return userservice.checkCustomer(email,password);
 		
-		return checkCustomer;
-
 	}
 	
 }

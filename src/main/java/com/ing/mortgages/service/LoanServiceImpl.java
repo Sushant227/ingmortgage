@@ -53,15 +53,16 @@ public class LoanServiceImpl implements LoanService {
 	@Override
 	public List<ListOfLoansDTO> viewLoans(Integer annualIncome,Integer propertyValue) {
 		
-		LOGGER.info("viewLoans:: {}=",annualIncome,propertyValue);
-
+		LOGGER.info("viewLoans:: {}=,annualIncome,propertyValue");
+		
+		Integer income = 3*annualIncome;
 		
 		Integer eligbleAmount = (propertyValue * 80)/100;
 		
-		if(annualIncome<500000) 
+		if(annualIncome<100000) 
 			throw new NotEligibleForTakingLoan("salary should be greater than 500000 for applying loan");
 		
-		Optional<List<Loan>> loansList = loanrepository.getLoanByLoanAmount(eligbleAmount);
+		Optional<List<Loan>> loansList = loanrepository.getLoanByLoanAmount(eligbleAmount,income);
 		
 		if(!loansList.isPresent())
 			throw new LoansListEmpty("loans are empty");
@@ -76,7 +77,7 @@ public class LoanServiceImpl implements LoanService {
 			list.setLoanAmount(loan.getLoanAmount());
 			list.setRateOfInterest(loan.getRateOfInterest());
 			list.setTenure(loan.getTenure());
-			list.setEMI(loan.getEMI());
+			list.setEmi(loan.getEMI());
 			newList.add(list);
 		});
 		
@@ -108,7 +109,7 @@ public class LoanServiceImpl implements LoanService {
 		 Integer loanAmt = loanDetail.get().get(0).getLoanAmount();
 		 Integer roi = loanDetail.get().get(0).getRateOfInterest();
 		 
-		 Double totalAmount =  (double) loanAmt + ((roi*loanAmt)/100);
+		 Double totalAmount =  (double) loanAmt + ((roi*loanAmt)/100.00);
 		 
 		 Double outstandingBalance = totalAmount;
 		 

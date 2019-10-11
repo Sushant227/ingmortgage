@@ -30,12 +30,12 @@ public class TransactionStatementServiceImpl implements TransactionStatementServ
 	/**
 	 * 
 	 * @param userId-NotNull
-	 * @return List<TransactionStatementDto
+	 * @return List<TransactionStatementDto>
 	 */
 
 	@Override
 	public List<TransactionStatementDto> accountTransactionStatements(Integer accountNumber) {
-		LOGGER.info("accountTransactionStatements:: {}=", accountNumber);
+		LOGGER.info("accountTransactionStatements()");
 		Optional<List<Transaction>> transactions = trsansactionRepository.findStatementsAccountNumber(accountNumber);
 		List<TransactionStatementDto> result = new ArrayList<>();
 		if (transactions.isPresent()) {

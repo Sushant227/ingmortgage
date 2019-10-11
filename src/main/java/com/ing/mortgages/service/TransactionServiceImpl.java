@@ -1,12 +1,12 @@
 package com.ing.mortgages.service;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
+
 import com.ing.mortgages.entity.Account;
 import com.ing.mortgages.entity.Mortgage;
 import com.ing.mortgages.entity.Transaction;

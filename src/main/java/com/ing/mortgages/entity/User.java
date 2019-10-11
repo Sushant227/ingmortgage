@@ -58,6 +58,8 @@ public class User  implements Serializable {
 			return address;
 		}
 		public void setAddress(String address) {
-
+			this.address = address;
 		}
+	
+	
 }
