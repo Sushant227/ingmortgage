@@ -22,6 +22,8 @@ public class User  implements Serializable {
 		private String password;
 		private long phone;
 		private String address;
+		
+		
 		public Integer getUserId() {
 			return userId;
 		}
@@ -56,9 +58,6 @@ public class User  implements Serializable {
 			return address;
 		}
 		public void setAddress(String address) {
-			this.address = address;
+
 		}
-	
-		
-		
 }
