@@ -31,7 +31,7 @@ public class TransactionServiceImpl implements TransactionService{
 	@Autowired
 	AccountRepository accountRepository;
 	
-	@Scheduled(cron="*/50 * * * * * ")
+	@Scheduled(cron="* */1 * * * * ")
 	public void createTransaction() {
 		
 		List<Integer> users = userRepository.getDistinctUserId();
