@@ -4,6 +4,9 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,8 +23,16 @@ import com.ing.mortgages.repository.LoanRepository;
 import com.ing.mortgages.repository.MortgageRepository;
 import com.ing.mortgages.repository.UserRepository;
 
+
+/**
+ * 
+ * @author Sravya Uppu
+ *
+ */
 @Service
 public class LoanServiceImpl implements LoanService {
+	
+	private static final Logger LOGGER = LoggerFactory.getLogger(MortgageServiceImpl.class);
 	
 	@Autowired
 	UserRepository userrepository;
@@ -31,13 +42,23 @@ public class LoanServiceImpl implements LoanService {
 	
 	@Autowired
 	MortgageRepository mortgageRepository;
-
-	@Override
-	public List<ListOfLoansDTO> viewLoans(Integer propertyValue,Integer salary) {
 	
+	
+
+	/**
+	 * 
+	 * @param annualIncome,propertyValue
+	 * @return List<ListOfLoansDTO>
+	 */
+	@Override
+	public List<ListOfLoansDTO> viewLoans(Integer annualIncome,Integer propertyValue) {
+		
+		LOGGER.info("viewLoans:: {}=",annualIncome,propertyValue);
+
+		
 		Integer eligbleAmount = (propertyValue * 80)/100;
 		
-		if(salary<500000) 
+		if(annualIncome<500000) 
 			throw new NotEligibleForTakingLoan("salary should be greater than 500000 for applying loan");
 		
 		Optional<List<Loan>> loansList = loanrepository.getLoanByLoanAmount(eligbleAmount);
@@ -63,14 +84,16 @@ public class LoanServiceImpl implements LoanService {
 
 		}
 	
-
+	
+	/**
+	 * 
+	 * @RequestBody LoanRequestDTO
+	 * @return ApplyResponseDTO
+	 */
 	 @Override
 	 public ApplyResponseDTO apply(LoanRequestDTO loanRequest) {
-		 loanRequest.getUserId();
-		 loanRequest.getLoanId();
-		 loanRequest.getPropertyAddress();
-		 loanRequest.getPropertyName();
-		
+		 
+			LOGGER.info("apply:: {}=",loanRequest);
 		 
 		 Optional<List<User>> userDetail = userrepository.findByUserId(loanRequest.getUserId());
 		 
@@ -105,7 +128,7 @@ public class LoanServiceImpl implements LoanService {
 		 mortgageRepository.save(mortgage);
 		 
 		 ApplyResponseDTO apply = new ApplyResponseDTO();
-		 apply.setStatusCode(Constants.SUCCESS_MESSAGE);
+		 apply.setStatusCode(Constants.APPLY_SUCCESS);
 		 apply.setStatusMessage(Constants.SUCCESS_STATUS_CODE);
 		 
 		 return apply;

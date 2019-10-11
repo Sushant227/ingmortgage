@@ -8,8 +8,8 @@ import com.ing.mortgages.dto.LoanRequestDTO;
 
 public interface LoanService {
 
-	List<ListOfLoansDTO> viewLoans(Integer propertyValue,Integer salary);
-
 	ApplyResponseDTO apply(LoanRequestDTO loanRequest);
+
+	List<ListOfLoansDTO> viewLoans(Integer annualIncome,Integer propertyValue);
 	
 }

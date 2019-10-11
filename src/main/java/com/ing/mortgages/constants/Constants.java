@@ -11,4 +11,7 @@ public class Constants {
 	
 	public static final String SUCCESS_MESSAGE = "success";
 	
+	public static final String APPLY_SUCCESS = "applied loan successfully";
+
+	
 }
