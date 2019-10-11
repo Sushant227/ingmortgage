@@ -56,7 +56,7 @@ public class TransactionServiceImpl implements TransactionService{
 			    transact.setMortgageId(mortgage.getMortgageId());
 			    transact.settDate(LocalDateTime.now());
 			    transact.setAccount(account);
-			    transactionRepository.save(transact);	
+			    transactionRepository.save(transact);
 			    }
 			    else
 			    {

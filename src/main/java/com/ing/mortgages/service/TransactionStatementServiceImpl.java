@@ -46,12 +46,6 @@ public class TransactionStatementServiceImpl implements TransactionStatementServ
 				TransactionStatementDto td = new TransactionStatementDto();
 				BeanUtils.copyProperties(trans, td);
 				result.add(td);
-//				td.setAccountNo(trans.getAccountNo());
-//				td.setAmountDeducted(trans.getAmountDeducted());
-//				td.setMortgageId(trans.getMortgageId());
-//				td.setOutstandingBalance(trans.getOutStandingBalance());
-//				td.settDate(trans.gettDate());
-//				td.setTransactionId(trans.getTransactionId());
 
 			});
 

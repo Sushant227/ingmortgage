@@ -11,7 +11,7 @@ import com.ing.mortgages.entity.Transaction;
 @Repository
 public interface TrsansactionRepository extends JpaRepository<Transaction, Integer> {
 
-	@Query(value="select *  from transaction t where t.account_number=?1",nativeQuery = true)
+	@Query(value="select * from transaction where account_no=?",nativeQuery = true)
 	Optional<List<Transaction>> findStatementsAccountNumber(Integer accountNumber);
 
 
