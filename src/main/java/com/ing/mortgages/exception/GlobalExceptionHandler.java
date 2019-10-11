@@ -33,6 +33,13 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 		ResponseError error = new ResponseError(ex.getMessage(), HttpStatus.NOT_FOUND.value());
 		return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
 	}
+	
+	@ExceptionHandler(PleaseCheckYourBalance.class)
+	public ResponseEntity<ResponseError> globalExceptionHandler(PleaseCheckYourBalance exception) {
+		ResponseError errorResponse = new ResponseError(exception.getMessage(), HttpStatus.NOT_FOUND.value());
+		return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
+
+	}
 
 
 }
