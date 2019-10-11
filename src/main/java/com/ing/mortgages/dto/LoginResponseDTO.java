@@ -5,13 +5,13 @@ public class LoginResponseDTO {
 	
 	private String statusCode;
 	private String statusMessage;
-	private Integer customerId;
-	
-	public Integer getCustomerId() {
-		return customerId;
+	private Integer userId;
+
+	public Integer getUserId() {
+		return userId;
 	}
-	public void setCustomerId(Integer customerId) {
-		this.customerId = customerId;
+	public void setUserId(Integer userId) {
+		this.userId = userId;
 	}
 	public String getStatusCode() {
 		return statusCode;

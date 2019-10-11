@@ -52,7 +52,7 @@ public class UserServiceImpl implements UserService {
 
 		if(user.get().get(0).getEmail().equals(email)&& user.get().get(0).getPassword().equals(password)) {
 			
-			loginResponse.setCustomerId(user.get().get(0).getUserId());
+			loginResponse.setUserId(user.get().get(0).getUserId());
 			loginResponse.setStatusCode(Constants.SUCCESS_STATUS_CODE);
 			loginResponse.setStatusMessage(Constants.SUCCESS_LOGGED_MESSAGE);
 		}
